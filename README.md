@@ -1,3 +1,3 @@
 # Toad-Programming-Language
 Toad is a programming language i'm making right now.
-bro im in the purgatory i cant
+I DONT CARE HELP ME I HAVENT ATE OR DRANK WATER IN 4 YEARS EVER SINCE THE INCIDENT
