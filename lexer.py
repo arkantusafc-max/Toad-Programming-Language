@@ -1,4 +1,5 @@
 from enum import Enum, auto
+from colorama import Fore
 class t(Enum): #Classe que guarda os tipos de token, se você quiser adicionar é so por "nomedotoken = auto()"
     ID = auto(),
     NUM = auto(),
@@ -43,6 +44,6 @@ def tokenize(_src): #A função que tokeniza
     return tk
 def printtk(_tk): #Função básica pra printar os tokens
     for i in _tk:
-        print(f"[Type: '{i[0].name}', Value: '{i[1]}']")
+        print(Fore.GREEN+f"[Type: '{i[0].name}', Value: '{i[1]}']")
 #TODO: Adicionar mais tipos de tokens
 #0% feito por ia :fogo::fogo:
