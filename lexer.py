@@ -4,7 +4,9 @@ class t(Enum): #Classe que guarda os tipos de token, se você quiser adicionar �
     ID = auto(),
     NUM = auto(),
     UNKNOWN = auto(),
-    ERROR = auto()
+    ERROR = auto(),
+    PRINT = auto(),
+    STRING = auto()
 def tokenize(_src): #A função que tokeniza
     tk = [] #a lista de tokens
     pos = 0 # o caractere atual (começa do zero)
@@ -36,7 +38,19 @@ def tokenize(_src): #A função que tokeniza
             while pos < n and (str.isalnum(_src[pos]) or _src[pos] == '_'):
                 buf+=_src[pos]
                 pos+=1
-            tk.append([t.ID, buf])
+            if buf == "print":
+                tk.append([t.PRINT, buf])
+            else:
+                tk.append([t.ID, buf])
+            continue
+        elif _src[pos] == '\"': #Pula o caractere se for um espaço
+            buf =""
+            pos+=1
+            while pos < n and _src[pos] != '\"':
+                buf+=_src[pos]
+                pos+=1
+            tk.append([t.STRING, buf])
+            pos+=1
             continue
         else:
             tk.append([t.UNKNOWN, _src[pos]])
