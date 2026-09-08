@@ -7,5 +7,5 @@ time.sleep(3)
 while 1:
     str = input(Fore.LIGHTMAGENTA_EX+"TOAD>>" + Fore.RESET)
     if str == ".exit":
-        break
+        break                                                                                                                                                                                             
     lexer.printtk(lexer.tokenize(str))
